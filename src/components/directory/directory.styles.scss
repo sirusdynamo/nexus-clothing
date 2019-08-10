@@ -1,0 +1,14 @@
+.menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media only screen and (max-width: 700px) {
+        width: 100%;
+        display: block;
+        // display: flex;
+        // align-items: baseline;
+        // flex-wrap: wrap;
+        // justify-content: space-between;  
+    }
+}
