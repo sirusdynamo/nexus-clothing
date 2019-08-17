@@ -13,7 +13,7 @@ import SHOP_DATA from "./shop.data";
     }
     
     render() {
-        const {collections} = this.state;
+        const collections = this.state.collections;
         return (
             <div className="shop-page">
 
