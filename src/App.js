@@ -13,24 +13,8 @@ import Header   from  './components/header/header.component.jsx';
 import { auth } from  './firebase/firebase.utils';
 import SignInAndSignUpPage  from "./pages/sign-in-and -up/sign-in-and-up.component.jsx";
 
-// const HatsPage =(props)=>(
-//   <div>
-//     <h1>HATS PAGE</h1>
-//     <h1>HATS PAGE</h1>
-//     <button onClick = { ()=> props.history.push('/topics')}>TOPICS</button>
-//   </div>
-// );
 
 class App extends React.Component {
-
-
-  constructor() {
-    super();
-    
-
-   
-  }
-
 
   // In javascript there is a huge difference between variables and properties.
   //  Variables get declared using var, let, const,
@@ -48,7 +32,7 @@ class App extends React.Component {
                               //     }
                               //     increase(){
                               //       this.count += 1;
-                              //     }
+                              //     } 
                               //  }
 
 // class Counter {
@@ -101,7 +85,10 @@ class App extends React.Component {
      
      <Route  exact path="/" component= {HomePage}/>
      <Route  exact path="/shop" component= {ShopPage}/>
-     <Route  exact path="/signin" component= {SignInAndSignUpPage}/>     
+     <Route  exact path="/signin" render= { () => this.props.currentUser ? 
+                                            (<redirect to="/"/> ): 
+                                            (<SignInAndSignUpPage/>)
+                                            }/>     
      </Switch>
           
         
@@ -112,8 +99,12 @@ class App extends React.Component {
      
 }
 
-const mapDispatchToProps = dispatch =>({
-setCurrentUser: user => dispatch(setCurrentUser(user))
+const mapStateToProps =({ user})=> ({
+  CurrentUser : user.currentUser
 })
 
-export default connect( null, mapDispatchToProps)(App);
+// const mapDispatchToProps = dispatch =>({
+// setCurrentUser: user => dispatch(setCurrentUser(user))
+// })
+
+export default connect( mapStateToProps, {setCurrentUser})(App);
