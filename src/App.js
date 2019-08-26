@@ -100,7 +100,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps =({ user})=> ({
-  CurrentUser : user.currentUser
+  currentUser : user.currentUser
 })
 
 // const mapDispatchToProps = dispatch =>({
