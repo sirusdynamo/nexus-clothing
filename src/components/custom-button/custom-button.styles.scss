@@ -16,22 +16,38 @@
     color: #fff;
     font-weight: bolder;
     letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
     box-shadow: 2px 4px 5px rgba(#000, 0.4);
     transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    &:hover {
-        transform: translateY(-4px);
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-    }
+    // &:hover {
+    //     transform: translateY(-4px);
+    //     background-color: white;
+    //     color: black;
+    //     border: 1px solid black;
+    // }
     &.google-sign-in {
         background-color: #4285f4 !important;
         color: white;
+        padding: 0 10px 0 10px;
         border: none;
         margin-left: 10px;
         &:hover {
             background-color: #357ae8 !important;
+            transform: translateY(-4px);
         }
+    }
+    &.inverted {
+        background-color: #fff;
+        border: 1px solid black;
+        color: #000;
+        transition: all 0.3s ease-in-out;
+        // &:hover {
+        //     background-color: black;
+        //     color: white;
+        //     border: none;
+        //     transform: translateY(-3px);
+        // }
     }
 }
 
