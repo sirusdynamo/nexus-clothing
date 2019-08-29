@@ -1,5 +1,8 @@
 .cart-dropdown {
     position: absolute;
+    top: 100px;
+    right: 85px;
+    z-index: 5;
     width: 240px;
     height: 340px;
     display: flex;
@@ -7,9 +10,6 @@
     padding: 20px;
     border: 1px solid black;
     background-color: white;
-    top: 100px;
-    right: 85px;
-    z-index: 5;
     .cart-items {
         height: 240px;
         display: flex;
@@ -18,7 +18,6 @@
     }
     button {
         margin-top: auto;
-        // margin-bottom: 5px;
         font-size: 12px;
     }
 }
