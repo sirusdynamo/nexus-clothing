@@ -4,7 +4,7 @@ import "./custom-button.styles.scss";
 
 
 const CustomButton =({ children, isGoogleSignIn, inverted,  ...otherProps   }) => (
-    <button  className={` ${inverted ? "inverted"  :""}${isGoogleSignIn ? "google-sign-in"  :""}  custom-button`}  {  ...otherProps   }>
+    <button  className={` ${inverted ? "inverted"  :""}${isGoogleSignIn ? "google-sign-in"  :""}  custom-button`}  {  ...otherProps   }  >
         { children }
     </button>
 )
@@ -12,9 +12,9 @@ const CustomButton =({ children, isGoogleSignIn, inverted,  ...otherProps   }) =
 export default CustomButton;
 
 
-const HardButton =({children, ...otherprops})=>(
-    <button   { ...otherprops}>
+// const HardButton =({children, ...otherprops})=>(
+//     <button   { ...otherprops}>
 
-        {children}
-    </button>
-)
+//         {children}
+//     </button>
+// )
