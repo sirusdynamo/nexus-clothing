@@ -12,9 +12,3 @@ const CustomButton =({ children, isGoogleSignIn, inverted,  ...otherProps   }) =
 export default CustomButton;
 
 
-// const HardButton =({children, ...otherprops})=>(
-//     <button   { ...otherprops}>
-
-//         {children}
-//     </button>
-// )
