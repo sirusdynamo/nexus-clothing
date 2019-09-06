@@ -9,8 +9,8 @@ import  { selectCurrentUser}  from "./redux/user/user.selector";
 import {connect } from "react-redux"
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
-import Directory   from "./components/directory/directory.component.jsx";
-import ShopPage from './pages/shop/shop.component';
+
+
 import Header   from  './components/header/header.component.jsx';
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
 import { auth } from  './firebase/firebase.utils';
