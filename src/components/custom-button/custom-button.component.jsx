@@ -10,5 +10,3 @@ const CustomButton =({ children, isGoogleSignIn, inverted,  ...otherProps   }) =
 )
 
 export default CustomButton;
-
-
