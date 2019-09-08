@@ -13,6 +13,7 @@ import HomePage from './pages/homepage/homepage.component';
 
 import Header   from  './components/header/header.component.jsx';
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
+import ShopPage from "./pages/shop/shop.component";
 import { auth } from  './firebase/firebase.utils';
 import SignInAndSignUpPage  from "./pages/sign-in-and -up/sign-in-and-up.component.jsx";
 

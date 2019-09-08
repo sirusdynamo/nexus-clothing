@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {Route , Switch} from "react-router-dom";
-import CollectionPage from "../../stripeCheckout/collectionPage/collection.component";
-import CollectionOverview from "../../stripeCheckout/collection-overview/collection-overview.component";
+import CollectionPage from "../../components/collectionPage/collection.component";
+import CollectionOverview from "../../components/collection-overview/collection-overview.component";
 
 
 const ShopPage =({match}) =>(

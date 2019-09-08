@@ -2,8 +2,8 @@ import React from "react";
 
 import "./sign-in-and-up.style.scss";
 
-import SignIn from "../../stripeCheckout/sign-in/sign-in.component";
-import SignUp from "../../stripeCheckout/sign-up/sign-up.component";
+import SignIn from "../../components/sign-in/sign-in.component";
+import SignUp from "../../components/sign-up/sign-up.component";
 
 
 const  SignInAndSignUpPage = () => (

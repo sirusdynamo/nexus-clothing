@@ -2,6 +2,7 @@ import React from "react";
 
 
 import "./sign-in.styles.scss";
+import {GroupButtons} from "./sign-in.styles";
 import CustomButton from "../custom-button/custom-button.component";
 import  FormInput  from "../form-input/form-input.component";
 
@@ -57,17 +58,21 @@ class SignIn extends React.Component {
                     value={this.state.password}
                     label="Password" 
                     required/>
-            <div className="button">
+            
+<GroupButtons>
+
 
             <CustomButton  type="submit">
                 sign in
             </CustomButton>
 
-            <CustomButton isGoogleSignIn= {true} onClick={signInWithGoogle}> Sign in with google
+            <CustomButton isGoogleSignIn= {true} onClick={signInWithGoogle}> Google Sign In
             </CustomButton>
 
+</GroupButtons>
 
-            </div>
+
+          
            
                     
 
