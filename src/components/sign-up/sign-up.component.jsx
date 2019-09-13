@@ -26,6 +26,8 @@ class SignUp extends React.Component {
     
      async handleSubmit (event){
 
+        event.preventDefault();
+
         const { password , confirmPassword, email, displayName } = this.state
         if( password !== confirmPassword){
             alert("passwords do not match");
@@ -33,7 +35,7 @@ class SignUp extends React.Component {
         }
 
         try {
-            const { user }  = auth.createUserWithEmailAndPassword(
+            const { user,credential }  =  await auth.createUserWithEmailAndPassword(
                 email,  
                 password
                 );
@@ -45,7 +47,28 @@ class SignUp extends React.Component {
             password:"",
             confirmPassword:""
 
-        })}
+        })
+
+        ;
+
+        user.sendEmailVerification().then(function() {
+          // Email sent.
+        }).catch(function(error) {
+          // An error happened.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode == 'auth/weak-password') {
+            alert('The password is too weak.');
+          } else {
+            alert(errorMessage);
+          }
+         
+         console.error("Error sending email verification message ");
+          
+        });
+    
+    
+    }
          catch (error) {
             console.log(error)
             
