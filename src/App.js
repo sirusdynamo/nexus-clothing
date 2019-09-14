@@ -10,7 +10,7 @@ import {connect } from "react-redux"
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 
-
+import ResetPage  from "./pages/reset-password/reset-password.component.jsx";
 import Header   from  './components/header/header.component.jsx';
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
 import ShopPage from "./pages/shop/shop.component";
@@ -92,11 +92,14 @@ class App extends React.Component {
      
      <Route  exact={true} path="/" component= {HomePage}/>
      <Route   path="/shop" component= {ShopPage}/>
+
      <Route   path="/signin" render= { () => this.props.currentUser ? 
                                             (<redirect to="/"/> ): 
                                             (<SignInAndSignUpPage/>)
                                             }/>     
+                                            
       <Route exact path="/checkout" component={CheckoutPage}/>
+      <Route  path="/reset" component={ResetPage}/>
       <Redirect to="/" />
      </Switch>
           

@@ -1,4 +1,5 @@
 import React from  "react";
+import {Link} from "react-router-dom";
 //imported Components
 import FormInput from "../form-input/form-input.component";
 import CustomButton  from "../custom-button/custom-button.component";
@@ -77,9 +78,9 @@ class SignUp extends React.Component {
 
     }
     
-    handleChange =   (event)=> {
+    handleChange = (event) => {
     
-        const { name  , value} =  event.target 
+        const { name  , value } =  event.target 
     
         this.setState({
             [name] : value
@@ -141,6 +142,9 @@ class SignUp extends React.Component {
 
                 <CustomButton type="submit" >sign up  </CustomButton>
                 </form>
+
+                <Link to="/reset"> Forgot Password </Link>
+
             </div>
         )
     }

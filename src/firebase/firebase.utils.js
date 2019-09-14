@@ -35,7 +35,7 @@ export const firestore = firebase.firestore();
 
 
 
-provider.setCustomParameters({ prompt: 'select_account' });
+
 
 
 export const signInWithGoogle = () => {
@@ -43,9 +43,11 @@ export const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider).then(result => {
             // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
-          // The signed-in user info.
-          var userInfo = result.user;
+
+            provider.setCustomParameters({ prompt: 'select_account' });
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var userInfo = result.user;
         }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -73,7 +75,7 @@ export default firebase;
 
 
 
-export const createUserProfileDocument = async (userAuth, additionalData) => {
+export const createUserProfileDocument = async(userAuth, additionalData) => {
     if (!userAuth) {
         return
     };
@@ -81,8 +83,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const userRef = firestore.doc(`/users/${userAuth.uid}`);
     const snapShot = await userRef.get();
 
-    if(!snapShot.exists){
-        const{ displayName, email,photoURL, emailVerified} = userAuth
+    if (!snapShot.exists) {
+        const { displayName, email, photoURL, emailVerified } = userAuth
         const createdAt = new Date();
 
         try {
@@ -90,10 +92,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
                 displayName,
                 email,
                 createdAt,
-                photoURL ,
+                photoURL,
                 ...additionalData,
             })
-        }catch(error){
+        } catch (error) {
             console.log("Error creating user" + userAuth)
         }
 
@@ -103,4 +105,4 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     return userRef
 
-} 
+}
